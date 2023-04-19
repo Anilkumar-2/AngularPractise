@@ -1,0 +1,12 @@
+<p>header works!</p>
+<button (click)="onClick($event)">Click Me</button>
+<br>
+<h2> {{greeting}}</h2>
+<h1>{{greet}}</h1>
+<button [disabled]="isDisable">submit</button>
+<br>
+<br>
+<div>
+    <input placeholder="enter name" type="text" [(ngModel)]="name">
+   {{name}}
+</div>

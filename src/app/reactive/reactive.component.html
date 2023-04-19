@@ -1,0 +1,76 @@
+<h1 >Regestration Form</h1>
+<div>
+    <form [formGroup]="regForm">
+        <div>
+            <div>
+                <label for="">User Name</label><span class="required-asterisk">*</span>
+                <input type="text" formControlName="username">
+                <div *ngIf="regForm.controls['username'].touched && regForm.controls['username']?.['errors']">
+                    <div *ngIf="regForm.controls['username']?.['errors']?.['required']">
+                        Username is required
+                    </div>
+                    <div *ngIf="regForm.controls['username']?.['errors']?.['minlength']">
+                        Username sholud be minimum of 6 characters
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div>
+                <label for="">Email</label><span class="required-asterisk">*</span>
+                <input type="text" formControlName="email">
+                <div *ngIf="regForm.controls['email'].touched && regForm.controls['email']?.['errors']">
+                    <div *ngIf="regForm.controls['email']?.['errors']?.['required']">
+                        Email is required
+                    </div>
+                    <div *ngIf="regForm.controls['email']?.['errors']?.['email']">
+                        Please enter valid email
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div>
+                <label>Password</label><span class="required-asterisk">*</span>
+                <input type="password" formControlName="password">
+                <div *ngIf="regForm.controls['password'].touched && regForm.controls['password']?.['errors']">
+                    <div *ngIf="regForm.controls['password']?.['errors']?.['required']">
+                        Password is required
+                    </div>
+                    <div *ngIf="regForm.controls['password']?.['errors']?.['minlength']">
+                        Password should be minimum 8 characters
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div>
+                <label>Confirm Password</label><span class="required-asterisk">*</span>
+                <input type="password" formControlName="confirmPassword">
+                <div *ngIf="regForm.controls['confirmPassword']?.['touched']">
+                    <div *ngIf="regForm.controls['confirmPassword']?.['errors']?.['required']">
+                        Confirm Password is required
+                    </div>
+                    <div *ngIf="regForm['errors']?.['passwordMatch']">
+                        Confirm Password not matching with password
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div>
+                <label for="">Gender </label>
+                <label >
+                    <input type="radio" name="gender" value="M" formControlName="gender">Male
+                </label>
+                <label >
+                    <input type="radio" name="gender" value="F" formControlName="gender">Female
+                </label>
+            </div>
+            <p></p>
+            <div>
+                <label for="">
+                    <input type="checkbox" formControlName="subscribe">Subscribe
+                </label>
+            </div>
+        </div>
+        <p></p>
+        <button (click)="show()" [disabled]="regForm.invalid" >Regester</button>
+    </form>
+</div>

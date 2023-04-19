@@ -1,0 +1,24 @@
+<h1>Regestration Form</h1>
+<form action="" #rf="ngForm">
+    <div>
+        <label for="">User Name</label>
+        <input type="text" ngModel name="username">
+    </div><p></p>
+    <div>
+        <label for="">Email</label>
+        <input type="email" ngModel name="email" required email>
+        <div *ngIf="rf.controls['email']?.['touched'] && rf.controls['email']?.['errors']">
+            <div *ngIf="rf.controls['email']?.['errors']?.['required']">Email is required</div>
+            <div *ngIf="rf.controls['email']?.['errors']?.['email']">Invalid email</div>
+        </div>
+    </div><p></p>
+    <div>
+        <label for="">Password</label>
+        <input type="text" ngModel name="password" required>
+    </div><p></p>
+    <div>
+        <label for="">Confirm Password</label>
+        <input type="text" ngModel name="cpassword" required>
+    </div><p></p>
+    <button (click)="show(rf)">Regester</button>
+</form>

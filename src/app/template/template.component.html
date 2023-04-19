@@ -1,0 +1,24 @@
+<h1>Template Form</h1>
+<div>
+    <form #myForm="ngForm">
+        <div>
+            <label for="name"> User Name</label><span class="required-asterisk">*</span>
+            <input type="text" name="name" [(ngModel)]="name" required minlength="6">
+            <div *ngIf="myForm.controls['name']?.['touched'] && myForm.controls['name']?.['errors']">
+                <div *ngIf="myForm.controls['name']?.['errors']?.['required']"> UserName is Required </div>
+                <div *ngIf="myForm.controls['name']?.['errors']?.['minlength']"> UserName sholud be minimum 6 characters </div>
+            </div>
+        </div>
+        <p></p>
+        <div>
+            <label for="email">Email</label><span class="required-asterisk">*</span>
+            <input type="email" name="email" [(ngModel)]="email" required email>
+            <div *ngIf="myForm.controls['email']?.['touched'] && myForm.controls['email']?.['errors']">
+                <div *ngIf="myForm.controls['email']?.['errors']?.['required']"> Email is Required </div>
+                <div *ngIf="myForm.controls['email']?.['errors']?.['email']"> Please Enter valid Email </div>
+            </div>
+        </div>
+        <p></p>
+        <button (click)="show()" [disabled]="myForm.invalid">Submit</button>
+    </form>
+</div>

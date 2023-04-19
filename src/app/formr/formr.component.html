@@ -1,0 +1,44 @@
+<div>
+    <h1>Reactive Form</h1>
+    <form [formGroup]="myForm">
+        <div>
+            <label for="">User Name</label><span class="required-asterisk">*</span>
+            <input type="text" formControlName="username">
+            <div *ngIf="myForm.controls['username'].touched && myForm.controls['username']?.['errors']">
+                <div *ngIf="myForm.controls['username']?.['errors']?.['required']">
+                    Username is required
+                </div>
+                <div *ngIf="myForm.controls['username']?.['errors']?.['minlength']">
+                    Username sholud be minimum of 4 characters
+                </div>
+            </div>
+        </div><p></p>
+        <div>
+            <label for="">Email</label><span class="required-asterisk">*</span>
+            <input type="text" formControlName="email">
+            <div *ngIf="myForm.controls['email'].touched && myForm.controls['email']?.['errors']">
+                <div *ngIf="myForm.controls['email']?.['errors']?.['required']">
+                    Email is required
+                </div>
+                <div *ngIf="myForm.controls['email']?.['errors']?.['email']">
+                    Please enter valid email
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div>
+            <label>Password</label><span class="required-asterisk">*</span>
+            <input type="password" formControlName="password">
+            <div *ngIf="myForm.controls['password'].touched && myForm.controls['password']?.['errors']">
+                <div *ngIf="myForm.controls['password']?.['errors']?.['required']">
+                    Password is required
+                </div>
+                <div *ngIf="myForm.controls['password']?.['errors']?.['minlength']">
+                    Password should be minimum 8 characters
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <button (click)="onFormSubmit()" [disabled]="myForm.invalid">Submit</button>
+    </form>
+</div>

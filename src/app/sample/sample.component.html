@@ -1,0 +1,168 @@
+<!-- <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div> -->
+<!-- <h1 *ngIf="!displayName; else elseBlock">
+    Hi Anil
+  </h1>
+  <ng-template #elseBlock>
+    <h1>
+      Hi Mummy
+    </h1>
+  </ng-template> -->
+
+<!-- <div *ngIf="displayName; then thenBlock; else elseBlock;"></div>
+  <ng-template #thenBlock>
+    <h2>Hi</h2>
+  </ng-template>
+  <ng-template #elseBlock>
+    <h2>Hello</h2>
+  </ng-template> -->
+
+<!-- <div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">You picked red</div>
+    <div *ngSwitchCase="'blue'">You picked blue</div>
+    <div *ngSwitchCase="'green'">You picked green</div>
+    <div *ngSwitchDefault>Pick again</div>
+  </div> -->
+
+<!-- <div *ngFor="let movie of movies; index as i; first as f; last as l; odd as o; even as e ">
+    <h3>Index: {{i}} Fisrt: {{f}} Last: {{l}} Odd: {{o}} Even: {{e}} Movie: {{movie}}</h3>
+  </div> -->
+<!-- <div>
+  <select class="btn btn-secondary dropdown" type="button" [(ngModel)]="state">
+    <option value="undefined" disabled selected hidden>Choose State</option>
+    <option value="Telangana">Telangana</option>
+    <option value="Andrapradesh">Andrapradesh</option>
+  </select>
+</div>
+
+
+<div [ngSwitch]="state">
+  <div *ngSwitchCase="'Telangana'">
+    <div *ngFor="let i of Telangana">
+      {{i}}
+    </div>
+  </div>
+  <div *ngSwitchCase="'Andrapradesh'">
+    <div *ngFor="let i of Andrapradesh">
+      {{i}}
+    </div>
+  </div>
+</div>
+
+<div>
+  <ul class="nav flex-column">
+    <li>
+      <a class="nav-link active" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Logout</a>
+    </li>
+  </ul>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <th>Employee Id</th>
+    <th>Emplyee Name</th>
+    <th>Employee Department</th>
+    <th>Employee Active</th>
+    <th>Toggle Status</th>
+  </thead>
+  <tbody *ngFor="let e of emp; let i=index; even as ev">
+    <tr>
+      <td> {{e.empId}} </td>
+      <td> {{e.empName}} </td>
+      <td> {{e.empDep}} </td>
+      <td> {{e.empActive}} </td>
+       <td> <button (click)="toggleState(i)"> Toogle State </button> </td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <input placeholder="Enter your marks" type="number" [(ngModel)]="marks">
+  <p></p>
+  <button (click)="Result()">Check Result</button>
+  <p></p>
+  <div>
+    <div *ngIf="flag==1">
+      <h2 class="btn btn-danger">{{res}}</h2>
+    </div>
+    <div *ngIf="flag==2">
+      <h2 class="btn btn-warning">{{res}}</h2>
+    </div>
+    <div *ngIf="flag==3">
+      <h2 class="btn btn-success">{{res}}</h2>
+    </div>
+    <div *ngIf="flag==4">
+      <h2 class="btn btn-light">{{res}}</h2>
+    </div>
+  </div>
+</div> -->
+<!-- <div [(ngModel)]="marks">
+  <input type="number" [(ngModel)]="marks"> -->
+  <!-- <div *ngIf="marks>=80">
+    <h3>First Class</h3>
+  </div>
+  <div *ngIf="marks>=40">
+    <h3>Pass</h3>
+  </div>
+  <div *ngIf="marks<40">
+    <h3>Fail</h3>
+  </div> -->
+<!-- <div *ngIf="marks<40; then thenBlock; else elseBlock;"></div>
+  <ng-template #thenBlock>
+    <h2 class="btn btn-danger">Fail</h2>
+  </ng-template>
+  <ng-template #elseBlock>
+    <h2 class="btn btn-success">Pass</h2>
+  </ng-template> -->
+  <!-- <select class="btn btn-secondary dropdown" [(ngModel)]="selectedState" (click)="onStateChange()">
+    <option value="" disabled selected hidden>Select a state</option>
+    <option *ngFor="let state of states" [value]="state">{{state}}</option>
+  </select>
+  
+  <select class="btn btn-secondary dropdown" [(ngModel)]="selectedCity">
+    <option value="" disabled selected hidden>Select a city</option>
+    <option *ngFor="let city of cities">{{city}}</option>
+  </select> -->
+  <!-- <div>
+    <h2>{{count}} </h2>
+    <button (click)="count= count+1">clickme</button>
+  </div> -->
+  <div>
+    <h2>{{count}} </h2>
+    <h1 (mouseup)="count= count+2">mouse</h1>
+  </div>
+  <br>
+  <div>
+    <input type="text" (keydown)="events($event)" #text1>
+  </div>
+  <div>
+    <input type="text" (cut)="cutMeth($event)" (copy)="copyMeth($event)" (paste)="pasteMeth($event)">
+  </div>
+
+  <form>
+    <label for="cars">Choose a car:</label>
+    <select>
+      <option value="volvo">Volvo XC90</option>
+      <option value="maruthi">suzuki</option>
+      <option value="mercedes">Mercedes SLK</option>
+      <option value="audi">Audi TT</option>
+    </select>
+    <button type="submit">Submit</button>
+    </form>
+    <option *ngFor="let item of items" [value]="item.Id">
+      {{item.Id}}
+    </option>
